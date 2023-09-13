@@ -12,8 +12,8 @@ int main()
     printf("la some ::%d \n", A + B);
     printf("la Subtraction ::%d \n", A - B);
     printf("la Multiplication ::%d \n", A * B);
-    float modulus = fmod(A, B);
-    printf("la Modulus :: %d\n", modulus);
+    
+    printf("la Modulus :: %d\n", A % B);
     if (B != 0)
     {
         printf("la Division ::%d", A / B);
