@@ -10,7 +10,7 @@ int main()
 
     if (A == B)
     {
-        printf("%d", A + A + A);
+        printf("%d", (A + A) + (A + A) + (A + A));
     }
     else
     {
