@@ -3,8 +3,8 @@
 int main()
 {
     char nom[] = "";
-    char sexe[] = "";
     char prenom[] = "";
+    char sexe[] = "";
     int age, numero;
     printf("entre votre nom ");
     scanf("%s", &nom);
