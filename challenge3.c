@@ -5,7 +5,9 @@
 int main()
 {
     int A, B;
+     printf("entre 1ere number");
     scanf("%d", &A);
+     printf("entre 2ere number");
     scanf("%d", &B);
     printf("la some ::%d \n", A + B);
     printf("la Subtraction ::%d \n", A - B);
