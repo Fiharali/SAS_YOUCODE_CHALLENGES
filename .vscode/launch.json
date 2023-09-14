@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Youcode/Desktop/challenges",
-      "program": "c:/Users/Youcode/Desktop/challenges/build/Debug/outDebug",
+      "cwd": "c:/Users/Youcode/Desktop/challenges/III. Les Boucles",
+      "program": "c:/Users/Youcode/Desktop/challenges/III. Les Boucles/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

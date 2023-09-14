@@ -5,10 +5,10 @@ int main()
 {
 
     int rows, i, j,k;
-    // scanf("%d", &rows);
-    for (i = 1; i <= 10; i++)
+     scanf("%d", &rows);
+    for (i = 1; i <= rows; i++)
     {
-        for (j = 1; j <= 10 - i; j++)
+        for (j = 1; j <= rows - i; j++)
         {
             printf(" ");
         }

@@ -8,7 +8,7 @@ int main()
     scanf("%d",&y1);
     scanf("%d",&x2);
     scanf("%d",&y2);
-    MN=sqrt((pow ((x1-x2), 2)) + ( pow ((x1-x2), 2)));
+    MN=sqrt((pow ((x1-x2), 2)) + ( pow ((y1-y2), 2)));
     printf("%d", MN);
     return 0;
 }
