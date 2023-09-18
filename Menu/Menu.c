@@ -27,10 +27,17 @@ void Menu()
 }
 void liste()
 {
-    for (int i = 0; i <= conter; i++)
+    if (conter == 0)
     {
-        // printf("dj");
-        printf(" %s \n", array[i]);
+        printf("est vide \n");
+    }
+    else
+    {
+        for (int i = 0; i <= conter; i++)
+        {
+            // printf("dj");
+            printf(" %s \n", array[i]);
+        }
     }
 }
 
@@ -73,7 +80,7 @@ void suppreme()
         if (strcmp(array[i], donnee) == 0)
         {
             // printf(" %s  exist in index %d", donnee, i + 1);
-            for (int j = i; j < conter; j++)
+            for (int j = i; j < conter - 1; j++)
             {
                 strcpy(array[j], array[j + 1]);
                 foundD == 1;
@@ -128,8 +135,9 @@ void generetList()
     {
         for (int i = 0; i < conter; i++)
         {
-            printf("donnees  %d === %s\n", i + 1, array[i]);
+            printf("$&#%s@$&#", array[i]);
         }
+        printf("\n");
     }
 }
 
