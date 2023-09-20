@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+
 int choix, conter = 0, foundD = 0, exist = 0, delteD = 0;
 char donnee[];
 char array[99][99];
@@ -44,7 +45,7 @@ void liste()
 void add()
 {
     printf(" entre la donnee  ");
-    scanf("%s", &donnee);
+    scanf("%s", donnee);
     strcpy(array[conter], donnee);
     // array[0]=donnee;
     conter++;
