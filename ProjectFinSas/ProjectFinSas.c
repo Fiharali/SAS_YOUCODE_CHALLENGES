@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
-int choix, count = 0, Id = 1, choix2, numAjo, walo, status,triPar;
+int choix, count = 0, Id = 1, choix2, numAjo, walo, status, triPar, khawi;
+char khawi1[33];
 
 // choix  === hada howa l'tikhtar luser f lawel
 // count  === hada howa l'count dyal struct
@@ -9,8 +10,8 @@ int choix, count = 0, Id = 1, choix2, numAjo, walo, status,triPar;
 // choix2 === hada hoxwa l' choix dyal ajouter bach ikhtar   ajouter  wa7da ola bzaf
 // numAjo === hada hoxwa dyal ch7al b4a izid
 // walo   === hadi bach tan3amer scanf li khawya
-// status === had dyal bach i5tar status li b4a f latach 
-// triPar === hadi tikhtar bach idir tri 
+// status === had dyal bach i5tar status li b4a f latach
+// triPar === hadi tikhtar bach idir tri
 
 typedef struct
 {
@@ -128,25 +129,90 @@ void Ajouter()
 }
 void Afficher()
 {
-    // printf("***********************************************************************************************************************************|\n");
-    // printf("|     ID     |           TITRE          |              DESCRIPTION            |           STATUS         |           DATE          |\n");
-    // for (int i = 0; i < count; i++)
-    // {
+    printf("***********************************************************************************************************************************|\n");
+    printf("|     ID     |           TITRE          |              DESCRIPTION            |           STATUS         |           DATE          |\n");
+    printf("***********************************************************************************************************************************|\n");
 
-    //     printf("***********************************************************************************************************************************|\n");
-    //     printf("|     %d     |            %s            |      %s     |           %s          |       %02d/%02d/%04d      |\n",
-    //            taches[i].id,
-    //            taches[i].titre,
-    //            taches[i].description,
-    //            taches[i].status, taches[i].deadline.jour,
-    //            taches[i].deadline.mois, taches[i].deadline.annee);
-    //     printf("***********************************************************************************************************************************|\n");
-    // }
+    for (int i = 0; i < count; i++)
+    {
 
-    printf("     [1] Trier les tâches par ordre alphabétique.");
-    printf("     [2]Trier les tâches par deadline.");
-    printf("     [3] Afficher les tâches dont le deadline est dans 3 jours ou moins.");
+        printf("|     %d     |            %s            |      %s     |           %s          |       %02d/%02d/%04d      |\n",
+               taches[i].id,
+               taches[i].titre,
+               taches[i].description,
+               taches[i].status, taches[i].deadline.jour,
+               taches[i].deadline.mois, taches[i].deadline.annee);
+        printf("***********************************************************************************************************************************|\n");
+    }
 
+    printf("     [1] Trier les taches par ordre alphabetique.\n");
+    printf("     [2]Trier les taches par deadline.\n");
+    printf("     [3] Afficher les taches dont le deadline est dans 3 jours ou moins.\n");
+    scanf("%d", &triPar);
+    if (triPar == 1)
+    {
+        for (int i = 0; i < count - 1; i++)
+        {
+            for (int j = i + 1; j < count; j++)
+            {
+                if (strcmp(taches[i].titre, taches[j].titre) > 0)
+                {
+                    // tri les tetre
+                    strcpy(khawi1, taches[i].titre);
+                    strcpy(taches[i].titre, taches[j].titre);
+                    strcpy(taches[j].titre, khawi1);
+                    // tri les description
+                    strcpy(khawi1, taches[i].description);
+                    strcpy(taches[i].description, taches[j].description);
+                    strcpy(taches[j].description, khawi1);
+
+                    strcpy(khawi1, taches[i].status);
+                    strcpy(taches[i].status, taches[j].status);
+                    strcpy(taches[j].status, khawi1);
+
+                    khawi = taches[i].id;
+                    taches[i].id = taches[j].id;
+                    taches[j].id = khawi;
+
+                    khawi = taches[i].deadline.jour;
+                    taches[i].deadline.jour = taches[j].deadline.jour;
+                    taches[j].deadline.jour = khawi;
+
+                    khawi = taches[i].deadline.mois;
+                    taches[i].deadline.mois = taches[j].deadline.mois;
+                    taches[j].deadline.mois = khawi;
+
+                    khawi = taches[i].deadline.mois;
+                    taches[i].deadline.mois = taches[j].deadline.mois;
+                    taches[j].deadline.mois = khawi;
+                }
+            }
+        }
+        for (int i = 0; i < count; i++)
+        {
+
+            // printf("***********************************************************************************************************************************|\n");
+            printf("|     %d     |            %s            |      %s     |           %s          |       %02d/%02d/%04d      |\n",
+                   taches[i].id,
+                   taches[i].titre,
+                   taches[i].description,
+                   taches[i].status, taches[i].deadline.jour,
+                   taches[i].deadline.mois, taches[i].deadline.annee);
+            printf("***********************************************************************************************************************************|\n");
+        }
+    }
+    else if (triPar = 2)
+    {
+        /* code */
+    }
+    else if (triPar == 3)
+    {
+        /* code */
+    }
+    else
+    {
+        printf("choix ne pas valide ");
+    }
 }
 
 int main()
